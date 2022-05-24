@@ -1,0 +1,77 @@
+package level2;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+
+public class biggestNumber2 {
+	public static void main(String args[]) {
+		//[6, 10, 2]	"6210"
+		//[3, 30, 34, 5, 9]	"9534330"
+		int[] numbers = {6, 10, 2};
+		ArrayList<Integer> lstNum = new ArrayList<>(); 
+		int numLen = 0;
+		String answer = ""; 
+		
+		for(int num : numbers) {
+			lstNum.add(num);
+			numLen += String.valueOf(num).length();
+		}
+		
+		for(int i=0; i<lstNum.size(); i++) {
+			System.out.println(lstNum.get(i));
+		}
+		
+		while (answer.length() < numLen) {
+			
+			int bigIdx = 0;
+			HashMap<Integer,Integer> hm = new HashMap<Integer, Integer>();
+			for (int i = 1; i < lstNum.size(); i++) {
+				
+				if (String.valueOf(lstNum.get(bigIdx)).charAt(0) < String.valueOf(lstNum.get(i)).charAt(0)) {
+					bigIdx = i;
+					hm.clear();
+				} else if (String.valueOf(lstNum.get(bigIdx)).charAt(0) == String.valueOf(lstNum.get(i)).charAt(0)) {
+					hm.put(i, lstNum.get(i));
+				}
+			}
+			if (hm.size() == 0) {
+				answer += String.valueOf(lstNum.get(bigIdx));
+				lstNum.remove(bigIdx);
+			} else {
+				hm.put(bigIdx, lstNum.get(bigIdx));
+				List<Entry<Integer, Integer>> lstEnt = new ArrayList<Entry<Integer,Integer>>(hm.entrySet());
+				
+				Collections.sort(lstEnt, new Comparator<Entry<Integer, Integer>>() {
+					@Override
+					public int compare(Entry<Integer,Integer> o1, Entry<Integer,Integer> o2) {
+						String str1 = String.valueOf(o1.getValue()) + String.valueOf(o2.getValue());
+						String str2 = String.valueOf(o2.getValue()) + String.valueOf(o1.getValue());
+						
+						if(Integer.parseInt(str1) == Integer.parseInt(str2)) {
+							return 0;
+						}else if(Integer.parseInt(str2) > Integer.parseInt(str1)) {
+							return 1;
+						}else {
+							return -1;
+						}
+					}
+				});
+				
+				for (Entry<Integer, Integer> entry : lstEnt) {
+					//System.out.println(entry.getKey() + " : " + entry.getValue());
+					answer += String.valueOf(entry.getValue());
+					lstNum.remove(entry.getKey());
+				}
+				hm.clear();
+				
+			}
+		}
+		
+		System.out.println("answer : " + answer);
+	}
+	 
+}

@@ -1,0 +1,64 @@
+package level2;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class biggestNumber {
+	public static void main(String args[]) {
+		//[6, 10, 2]	"6210"
+		//[3, 30, 34, 5, 9]	"9534330"
+		int[] numbers = {3, 30, 34, 5, 9};
+		ArrayList<Integer> lstNum = new ArrayList<>(); 
+		int numLen = 0;
+		String answer = ""; 
+		
+		for(int num : numbers) {
+			lstNum.add(num);
+			numLen += String.valueOf(num).length();
+		}
+		
+		for(int i=0; i<lstNum.size(); i++) {
+			System.out.println(lstNum.get(i));
+		}
+		
+		while (answer.length() < numLen) {
+			int bigIdx = 0;
+			ArrayList<Integer> arrLst = new ArrayList<Integer>();
+			ArrayList<Integer> arrLst1 = new ArrayList<Integer>();
+			ArrayList<Integer> arrLst2 = new ArrayList<Integer>();
+			ArrayList<Integer> arrLst3 = new ArrayList<Integer>();
+			ArrayList<Integer> arrLst4 = new ArrayList<Integer>();
+			ArrayList<Integer> arrLst5 = new ArrayList<Integer>();
+			  
+			for (int i = 1; i < lstNum.size(); i++) {
+				if (String.valueOf(lstNum.get(bigIdx)).charAt(0) < String.valueOf(lstNum.get(i)).charAt(0)) {
+					bigIdx = i;
+					arrLst.clear();
+				} else if (String.valueOf(lstNum.get(bigIdx)).charAt(0) == String.valueOf(lstNum.get(i)).charAt(0)) {
+					arrLst.add(i);
+				}
+			}
+			if (arrLst.size() == 0) {
+				answer += String.valueOf(lstNum.get(bigIdx));
+				lstNum.remove(bigIdx);
+			} else {
+				char oriNo = String.valueOf(lstNum.get(bigIdx)).charAt(0);
+				for (int j = 0; j < arrLst.size(); j++) {
+					if (String.valueOf(arrLst.get(j)).length() == 3 && String.valueOf(arrLst.get(j)).charAt(2) >= oriNo && String.valueOf(arrLst.get(j)).charAt(1) >= oriNo) {
+						arrLst1.add(arrLst.get(j));
+					}else if (String.valueOf(arrLst.get(j)).length() == 2 && String.valueOf(arrLst.get(j)).charAt(1) >= oriNo) {
+						arrLst2.add(arrLst.get(j));
+					}else if (String.valueOf(arrLst.get(j)).length() == 1) {
+						arrLst3.add(arrLst.get(j));
+					}else if (String.valueOf(arrLst.get(j)).length() == 2 && String.valueOf(arrLst.get(j)).charAt(1) < oriNo) {
+						arrLst4.add(arrLst.get(j));
+					}else if (String.valueOf(arrLst.get(j)).length() == 3 && String.valueOf(arrLst.get(j)).charAt(1) < oriNo) {
+						arrLst5.add(arrLst.get(j));
+					}
+				}
+			}
+			 
+		}
+		 
+	}
+}

@@ -6,40 +6,40 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="rTimeQueue.peek()"/>
+		<item key="selection" value="bigIdx : 0"/>
 		<list key="findhistory">
-			<item value="rTimeQueue.peek()"/>
-			<item value="rTimeQueue.peek()rTimeQueue.peek()"/>
-			<item value="rTime"/>
-			<item value="iTotalTime"/>
-			<item value="compareTo"/>
-			<item value="setStart"/>
-			<item value="rTimeQueue"/>
-			<item value="getTime"/>
-			<item value="sec"/>
-			<item value=".getNum()"/>
-			<item value=".get()"/>
-			<item value="priorityQueue"/>
-			<item value="rtn[0]"/>
-			<item value="//&#x09;&#x09;"/>
-			<item value="arr"/>
+			<item value="bigIdx : 0"/>
+			<item value="arrLst"/>
+			<item value="iterator"/>
+			<item value="itera"/>
+			<item value="iter"/>
+			<item value="arrLst.get(j)"/>
+			<item value="for (Entry&lt;Integer, Integer&gt;"/>
+			<item value="public int compare(Entry&lt;Integer, Integer&gt; obj1, Entry&lt;Integer, Integer&gt; obj2) {"/>
+			<item value="new Comparator&lt;Entry&lt;Integer, Integer&gt;&gt;() {"/>
+			<item value="List&lt;Entry&lt;Integer, Integer&gt;&gt;"/>
+			<item value="new ArrayList&lt;Entry&lt;Integer, Integer&gt;&gt;"/>
+			<item value="HashMap&lt;Integer, Integer&gt;"/>
+			<item value="hm2"/>
+			<item value="ArrayList&lt;Integer&gt;();"/>
+			<item value="ArrayList&lt;Integer&gt; arrLst"/>
 		</list>
 		<list key="replacehistory">
+			<item value="lstNum.get(arrLst.get(j))"/>
+			<item value="public int compare(Entry&lt;String, Integer&gt; obj1, Entry&lt;String, Integer&gt; obj2) {"/>
+			<item value="new Comparator&lt;Entry&lt;String, Integer&gt;&gt;() {"/>
+			<item value="List&lt;Entry&lt;String, Integer&gt;&gt;"/>
+			<item value="new ArrayList&lt;Entry&lt;String, Integer&gt;&gt;"/>
+			<item value="HashMap&lt;String, Integer&gt;"/>
+			<item value="hm5"/>
+			<item value="hm4"/>
+			<item value="hm3"/>
+			<item value="hm"/>
+			<item value="HashMap&lt;&gt;();"/>
+			<item value="HashMap&lt;Integer, Integer&gt; hm"/>
 			<item value=".getNum()"/>
 			<item value="pq"/>
 			<item value=""/>
-			<item value="c"/>
-			<item value="}"/>
-			<item value="{"/>
-			<item value=")"/>
-			<item value="arr.get("/>
-			<item value="heap"/>
-			<item value="answer"/>
-			<item value="K"/>
-			<item value="lst"/>
-			<item value="d"/>
-			<item value="arlst"/>
-			<item value="n"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
